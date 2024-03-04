@@ -5,6 +5,7 @@ import Controller.Interfaces.iGetModel;
 import Controller.Interfaces.iGetView;
 import Model.FileModelClass;
 import Model.ModelClass;
+import Model.ModelClassHash;
 import Model.Domen.Student;
 import View.ViewClass;
 import View.ViewClassEng;
@@ -32,8 +33,11 @@ public class App {
         iGetView view =new ViewClassEng();
         iGetModel model=new ModelClass(students);
         ControllerClass controller=new ControllerClass(fmClass, view);
-        // controller.update();
-        controller.run();
+        controller.update();
+        iGetModel hashModel = new ModelClassHash(new ArrayList<>(students));
+        System.out.println(hashModel);
+
+        // controller.run();
 
     }
 }

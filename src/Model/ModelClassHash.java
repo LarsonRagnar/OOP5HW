@@ -9,7 +9,10 @@ import Model.Domen.Student;
 
 public class ModelClassHash implements iGetModel {
     private HashMap<Integer,Student> studentHashMap;
-
+/**
+ * @apiNote МЕтод преоразования в hashMap
+ * @param studentHashMap
+ */
     public ModelClassHash(List<Student> studentHashMap) {
         this.studentHashMap = new HashMap<>();
         for (Student student : studentHashMap) {
@@ -33,6 +36,11 @@ public class ModelClassHash implements iGetModel {
     @Override
     public boolean isStudentExist(Integer idStudent) {
         return studentHashMap.containsKey(idStudent);
+    }
+
+    @Override
+    public String toString() {
+        return "ModelClassHash studentHashMap=" + studentHashMap ;
     }
 
 
